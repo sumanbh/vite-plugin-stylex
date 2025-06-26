@@ -85,7 +85,7 @@ export default function styleXVitePlugin({
   libraries: inputLibraries = [],
   useCSSLayers = true,
   ...options
-}: Omit<StyleXVitePluginOptions, "dev" | "fileName"> = {}) {
+}: Omit<StyleXVitePluginOptions, "dev" | "fileName"> = {}): Plugin[] {
   const libraries = ["@stylexjs/open-props", ...inputLibraries];
 
   let stylexRules: Record<string, any> = {};
@@ -395,5 +395,5 @@ export default function styleXVitePlugin({
         }
       },
     },
-  ] satisfies Plugin[];
+  ];
 }
